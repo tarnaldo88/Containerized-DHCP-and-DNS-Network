@@ -6,7 +6,7 @@ services:
     container_name: dns_server
     networks:
       testnet:
-        ipv4_address: 172.30.0.10
+        ipv4_address: 172.25.0.10
     cap_add:
       - NET_ADMIN
 
@@ -15,7 +15,7 @@ services:
     container_name: dhcp_server
     networks:
       testnet:
-        ipv4_address: 172.30.0.2
+        ipv4_address: 172.25.0.20
     cap_add:
       - NET_ADMIN
 
