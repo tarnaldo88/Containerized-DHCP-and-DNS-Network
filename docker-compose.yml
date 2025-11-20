@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  dns:
+    build: ./dns
+    container_name: dns
+    networks:
+      testnet:
+        ipv4_address: 172.20.0.10
+
+  dhcp:
+    build: ./dhcp
+    container_name: dhcp
+    networks:
+      testnet:
+        ipv4_address: 172.20.0.2
+    cap_add:
+      - NET_ADMIN
+
+  client:
+    build: ./client
+    container_name: client
+    networks:
+      testnet:
+    cap_add:
+      - NET_ADMIN
+
+networks:
+  testnet:
+    external: true
