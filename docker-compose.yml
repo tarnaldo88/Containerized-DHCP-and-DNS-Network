@@ -26,6 +26,9 @@ services:
       testnet:
     cap_add:
       - NET_ADMIN
+    stdin_open: true
+    tty: true
+    command: tail -f /dev/null
 
 networks:
   testnet:
